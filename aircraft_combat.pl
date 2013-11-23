@@ -1,12 +1,12 @@
 #!/usr/bin/perl
 
-use Aircraft;
+use Weapon;
 
 package main;
 
-my $aircraft1 = Aircraft->new( type => "Mitsubishi A6M Zero", weight => 5200, armor_class =>  10 );
-my $aircraft2 = Aircraft->new( type => "Focke-Wulfe 190", weight => 8000, armor_class => 13 );
-my $aircraft3 = Aircraft->new( type => "Grumman F6F Hellcat", weight => 10000, armor_class => 4 );
+my $aircraft1 = Weapon->new( type => "Mitsubishi A6M Zero", weight => 5200, armor_class =>  10 );
+my $aircraft2 = Weapon->new( type => "Focke-Wulfe 190", weight => 8000, armor_class => 13 );
+my $aircraft3 = Weapon->new( type => "Grumman F6F Hellcat", weight => 10000, armor_class => 4 );
 
 sub get_lowest_armor_class {
     my @armor_classes; 
@@ -35,9 +35,9 @@ sub get_winning_aircraft_weight {
     }
 }
 
-print $aircraft1->aircraft_object,  "\n";
-print $aircraft2->aircraft_object,  "\n";
-print $aircraft3->aircraft_object,  "\n";
+print $aircraft1->weapon_object,  "\n";
+print $aircraft2->weapon_object,  "\n";
+print $aircraft3->weapon_object,  "\n";
 my $winning_aircraft = find_aircraft_with_lowest_armor_class(); 
 my $winning_aircraft_weight = get_winning_aircraft_weight(); 
 print "winning aircraft is: $winning_aircraft\n"; 

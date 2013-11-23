@@ -1,2 +1,11 @@
 
-combat.pl - do aircraft or tank combat. 
+driver code:
+------------
+combat.pl - driver that calls perl scripts to do aircraft or tank combat. Run this. 
+
+modules and main code:
+----------------------
+Aircraft.pm - aircraft combat perl module
+Tank.pm - tank combat perl module
+aircraft_combat.pl - aircraft_combat perl script
+tank_combat.pl - aircraft_combat perl script
