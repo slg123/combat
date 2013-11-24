@@ -12,7 +12,7 @@ tank_combat.pl - aircraft_combat perl script
 
 python code:
 ------------
-weaponry.py - classes for tank and aircraft
+weapon_class.py - abstract weapon class for tanks and aircraft
 
 main code:
 ----------
