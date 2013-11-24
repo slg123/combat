@@ -12,21 +12,20 @@ print airplane3.weapon_type(), airplane3.weapon_weight(), airplane3.weapon_range
 
 def do_combat():
 
-    def get_lowest_airplane_armor_class():
+    def get_lowest_armor_class():
         L = [ airplane1.weapon_armor_class(), airplane2.weapon_armor_class(), airplane3.weapon_armor_class() ]
         L.sort()
         return L[0]
     
-    winning_airplane_armor_class = get_lowest_airplane_armor_class()
-    print "The winning airplane has an armor class of: ", winning_airplane_armor_class
+    print "The winning airplane has an armor class of: ", get_lowest_armor_class()
 
-    def find_airplane_type_with_lowest_airplane_armor_class():
+    def find_airplane_type_with_lowest_armor_class():
         L = [ airplane1, airplane2, airplane3 ]
         for i in L:
-            if i.weapon_armor_class() == get_lowest_airplane_armor_class():
+            if i.weapon_armor_class() == get_lowest_armor_class():
                 return i.weapon_type()
 
-    winning_airplane_type = find_airplane_type_with_lowest_airplane_armor_class()
+    winning_airplane_type = find_airplane_type_with_lowest_armor_class()
     print "the winning airplane is: ", winning_airplane_type
 
     def get_winning_airplane_weight():
