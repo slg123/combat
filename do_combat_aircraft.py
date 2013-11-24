@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 
-from weaponry import Aircraft
+from weapon_class import Weapon
 
-airplane1 = Aircraft( 'Mitsubishi A6M Zero', 5200, 750, 10 )
-airplane2 = Aircraft( 'Focke-Wulfe 190', 8000, 450, 13 )
-airplane3 = Aircraft( 'Grumman F6F Hellcat', 10000, 550, 4 )
+airplane1 = Weapon( 'Mitsubishi A6M Zero', 5200, 750, 10 )
+airplane2 = Weapon( 'Focke-Wulfe 190', 8000, 450, 13 )
+airplane3 = Weapon( 'Grumman F6F Hellcat', 10000, 550, 4 )
 
-print airplane1.airplane_type(), airplane1.airplane_weight(), airplane1.airplane_range(), airplane1.airplane_armor_class()
-print airplane2.airplane_type(), airplane2.airplane_weight(), airplane2.airplane_range(), airplane2.airplane_armor_class()
-print airplane3.airplane_type(), airplane3.airplane_weight(), airplane3.airplane_range(), airplane3.airplane_armor_class()
+print airplane1.weapon_type(), airplane1.weapon_weight(), airplane1.weapon_range(), airplane1.weapon_armor_class()
+print airplane2.weapon_type(), airplane2.weapon_weight(), airplane2.weapon_range(), airplane2.weapon_armor_class()
+print airplane3.weapon_type(), airplane3.weapon_weight(), airplane3.weapon_range(), airplane3.weapon_armor_class()
 
 def do_combat():
 
     def get_lowest_airplane_armor_class():
-        L = [ airplane1.airplane_armor_class(), airplane2.airplane_armor_class(), airplane3.airplane_armor_class() ]
+        L = [ airplane1.weapon_armor_class(), airplane2.weapon_armor_class(), airplane3.weapon_armor_class() ]
         L.sort()
         return L[0]
     
@@ -23,8 +23,8 @@ def do_combat():
     def find_airplane_type_with_lowest_airplane_armor_class():
         L = [ airplane1, airplane2, airplane3 ]
         for i in L:
-            if i.airplane_armor_class() == get_lowest_airplane_armor_class():
-                return i.airplane_type()
+            if i.weapon_armor_class() == get_lowest_airplane_armor_class():
+                return i.weapon_type()
 
     winning_airplane_type = find_airplane_type_with_lowest_airplane_armor_class()
     print "the winning airplane is: ", winning_airplane_type
@@ -32,16 +32,16 @@ def do_combat():
     def get_winning_airplane_weight():
         L = [ airplane1, airplane2, airplane3 ]
         for i in L:
-            if i.airplane_type() == winning_airplane_type:
-                return i.airplane_weight()
+            if i.weapon_type() == winning_airplane_type:
+                return i.weapon_weight()
 
     print "the winning airplane weight is: ", get_winning_airplane_weight(), " pounds"
 
     def get_winning_airplane_range():
         L = [ airplane1, airplane2, airplane3 ]
         for i in L:
-            if i.airplane_type() == winning_airplane_type:
-                return i.airplane_range()
+            if i.weapon_type() == winning_airplane_type:
+                return i.weapon_range()
 
     print "the ", winning_airplane_type, "has a cruising range of ", get_winning_airplane_range(), "nautical miles."
 

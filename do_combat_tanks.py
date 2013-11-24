@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 
-from weaponry import Tank
+from weapon_class import Weapon
 
-tank1 = Tank( 'Sherman', 10000, 5 )
-tank2 = Tank( 'Panzer', 15000, 15 )
-tank3 = Tank( 'M1 Abrams', 20000, 12 )
+tank1 = Weapon( 'Sherman',   10000, 140,  5 )
+tank2 = Weapon( 'Panzer',    15000, 120, 15 )
+tank3 = Weapon( 'M1 Abrams', 20000, 180, 12 )
 
-print tank1.tank_type(), tank1.tank_weight(), tank1.tank_armor_class()
-print tank2.tank_type(), tank2.tank_weight(), tank2.tank_armor_class()
-print tank3.tank_type(), tank3.tank_weight(), tank3.tank_armor_class()
+print tank1.weapon_type(), tank1.weapon_weight(), tank1.weapon_armor_class()
+print tank2.weapon_type(), tank2.weapon_weight(), tank2.weapon_armor_class()
+print tank3.weapon_type(), tank3.weapon_weight(), tank3.weapon_armor_class()
 
 def do_combat():
 
     def get_lowest_armor_class():
-        L = [ tank1.tank_armor_class(), tank2.tank_armor_class(), tank3.tank_armor_class() ]
+        L = [ tank1.weapon_armor_class(), tank2.weapon_armor_class(), tank3.weapon_armor_class() ]
         L.sort()
         return L[0]
     
@@ -23,8 +23,8 @@ def do_combat():
     def find_tank_type_with_lowest_armor_class():
         L = [ tank1, tank2, tank3 ]
         for i in L:
-            if i.tank_armor_class() == get_lowest_armor_class():
-                return i.tank_type()
+            if i.weapon_armor_class() == get_lowest_armor_class():
+                return i.weapon_type()
 
     winning_tank_type = find_tank_type_with_lowest_armor_class()
     print "the winning tank is: ", winning_tank_type
@@ -32,8 +32,8 @@ def do_combat():
     def get_winning_tank_weight():
         L = [ tank1, tank2, tank3 ]
         for i in L:
-            if i.tank_type() == winning_tank_type:
-                return i.tank_weight()
+            if i.weapon_type() == winning_tank_type:
+                return i.weapon_weight()
 
     print "the winning tank weight is: ", get_winning_tank_weight(), " pounds"
 
