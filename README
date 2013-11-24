@@ -9,3 +9,12 @@ Aircraft.pm - aircraft combat perl module
 Tank.pm - tank combat perl module
 aircraft_combat.pl - aircraft_combat perl script
 tank_combat.pl - aircraft_combat perl script
+
+python code:
+------------
+weaponry.py - classes for tank and aircraft
+
+main code:
+----------
+do_combat_tank.py - do tank combat
+do_combat_aircraft.py - do aircraft combat
