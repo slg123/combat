@@ -2,9 +2,9 @@
 
 from weapon_class import Weapon
 
-airplane1 = Weapon( 'Mitsubishi A6M Zero', 5200, 750, 10 )
-airplane2 = Weapon( 'Focke-Wulfe 190', 8000, 450, 13 )
-airplane3 = Weapon( 'Grumman F6F Hellcat', 10000, 550, 4 )
+airplane1 = Weapon( 'Mitsubishi A6M Zero',  5200, 750, 10 )
+airplane2 = Weapon( 'Focke-Wulfe 190',      8000, 450, 13 )
+airplane3 = Weapon( 'Grumman F6F Hellcat', 10000, 550,  4 )
 
 print airplane1.weapon_type(), airplane1.weapon_weight(), airplane1.weapon_range(), airplane1.weapon_armor_class()
 print airplane2.weapon_type(), airplane2.weapon_weight(), airplane2.weapon_range(), airplane2.weapon_armor_class()
