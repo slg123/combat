@@ -1,10 +1,14 @@
 
-driver code:
-------------
+combat - simple OOP examples in Perl and Python, just for fun. 
+------
+
+
+perl driver code:
+-----------------
 combat.pl - driver that calls perl scripts to do aircraft or tank combat. Run this. 
 
-modules and main code:
-----------------------
+perl modules and main code:
+---------------------------
 Aircraft.pm - aircraft combat perl module
 Tank.pm - tank combat perl module
 aircraft_combat.pl - aircraft_combat perl script
@@ -14,7 +18,7 @@ python code:
 ------------
 weapon_class.py - abstract weapon class for tanks and aircraft
 
-main code:
-----------
+python main code:
+-----------------
 do_combat_tank.py - do tank combat
 do_combat_aircraft.py - do aircraft combat
