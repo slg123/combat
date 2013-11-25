@@ -1,6 +1,8 @@
 
 combat - simple OOP examples in Perl and Python, just for fun. 
 ------
+combat.c - simple C program that generates the same ( more or less ) output. 
+--------
 
 
 perl driver code:
