@@ -11,11 +11,9 @@ struct weapon_info {
 };
 
 int main( void ) {
-
     do_tank_combat();
     printf("\n\n"); 
     do_aircraft_combat(); 
-
     return 0;
 }
 
@@ -57,13 +55,10 @@ int do_tank_combat( void ) {
             }
         }
     }
-
     printf("%s %d %d\n", tank1.name, tank1.weight, tank1.armor_class ); 
     printf("%s %d %d\n", tank2.name, tank2.weight, tank2.armor_class ); 
     printf("%s %d %d\n", tank3.name, tank3.weight, tank3.armor_class ); 
     printf("the winning tank has an armor class of %d\n", min); 
-
-
 
     return 0;
 }
@@ -105,8 +100,6 @@ int do_aircraft_combat( void ) {
             }
         }
     }
-
-
     printf("%s %d %d\n", aircraft1.name, aircraft1.weight, aircraft1.armor_class ); 
     printf("%s %d %d\n", aircraft2.name, aircraft2.weight, aircraft2.armor_class ); 
     printf("%s %d %d\n", aircraft3.name, aircraft3.weight, aircraft3.armor_class ); 
