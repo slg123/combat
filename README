@@ -4,7 +4,6 @@ combat - simple OOP examples in Perl and Python, just for fun.
 combat.c - simple C program that generates the same ( more or less ) output. 
 --------
 
-
 perl driver code:
 -----------------
 combat.pl - driver that calls perl scripts to do aircraft or tank combat. Run this. 
@@ -24,3 +23,10 @@ python main code:
 -----------------
 do_combat_tank.py - do tank combat
 do_combat_aircraft.py - do aircraft combat
+
+Java code:
+----------
+Weapon.java      - weapon 
+WeaponTest.java  - test the weapon 
+TankCombat.java  - do tank combat 
+
