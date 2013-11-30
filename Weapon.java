@@ -12,6 +12,6 @@ public class Weapon {
     }
 
     public String toString() {
-        return String.format( "%15s %6d %6d %6d", weapon_name, weight, range, armor_class ); 
+        return String.format( "%25s %6d %6d %6d", weapon_name, weight, range, armor_class ); 
     }
 }
