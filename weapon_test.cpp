@@ -24,7 +24,7 @@ Weapon::Weapon( const char *nm, int wt, int rng, int ac ) {
 Weapon::~Weapon() {
 }
 
-void Weapon::show_attributes() {
+void Weapon::show_attributes() const {
     cout << weapon_name << ' ' << weight << ' ' << range << ' ' << armor_class << endl;
 }
 

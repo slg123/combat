@@ -8,5 +8,5 @@ class Weapon {
         Weapon(); // default constructor
         Weapon( const char *s, int wt = 0, int rng = 0, int ac = 0 );
         ~Weapon();
-        void show_attributes();
+        void show_attributes() const;
 }; 
