@@ -5,6 +5,9 @@
 using std::cout;
 using std::endl;
 
+void do_tank_combat();
+void do_plane_combat();
+
 /* default constructor */
 Weapon::Weapon() {
     std::strcpy( weapon_name, "no name" );
@@ -29,6 +32,16 @@ void Weapon::show_attributes() const {
 }
 
 int main() {
+
+    do_tank_combat();
+    cout << endl;
+    do_plane_combat();
+
+    return 0;
+}
+
+void do_tank_combat() {
+
     const int TANKS = 3;
     Weapon tanks[TANKS] = {
         Weapon( "M1 Abrams", 15000, 130, 9 ),
@@ -62,5 +75,39 @@ int main() {
             }
         }
     }
-    return 0;
+}
+
+void do_plane_combat() {
+
+    const int PLANES = 3;
+    Weapon planes[PLANES] = {
+        Weapon( "Mitsubishi Zero",     2500, 300, 4 ),
+        Weapon( "P51 Mustang",         3500, 460, 8 ),
+        Weapon( "Grumman F6F Hellcat", 4500, 325, 1 )
+    };
+
+    for ( int i = 0; i < PLANES; i++ ) {
+        planes[i].show_attributes();
+    }
+
+    // get minimum plane armor class
+    int min = planes[1].armor_class;
+    for ( int i = 0; i < PLANES; i++ ) {
+        if ( planes[i].armor_class <= min ) {
+            min = planes[i].armor_class;
+        }
+    }
+    cout << "lowest armor class: " << min << endl;
+
+    for ( int i = 0; i < PLANES; i++ ) {
+        if ( planes[i].armor_class == min ) {
+            if ( i == 0 ) {
+                cout << "the winning plane is: " << planes[i].weapon_name << endl;
+            } else if ( i == 1 ) {
+                cout << "the winning plane is: " << planes[i].weapon_name << endl;
+            } else if ( i == 2 ) {
+                cout << "the winning plane is: " << planes[i].weapon_name << endl;
+            }
+        }
+    }
 }
