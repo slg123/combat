@@ -29,35 +29,36 @@ void Weapon::show_attributes() const {
 }
 
 int main() {
+    const int TANKS = 3;
+    Weapon tanks[TANKS] = {
+        Weapon( "M1 Abrams", 15000, 130, 9 ),
+        Weapon( "Panzer",    12000,  80, 7 ),
+        Weapon( "Sherman",   19000, 110, 3 )
+    };
 
-    Weapon tank1( "M1 Abrams", 15000, 130,  9 ); 
-    Weapon tank2( "Panzer",    12000,  80,  7 ); 
-    Weapon tank3( "Sherman",   15000, 110,  3 ); 
-
-    int armor_classes[3] = { tank1.armor_class, tank2.armor_class, tank3.armor_class };
-
-    tank1.show_attributes();
-    tank2.show_attributes();
-    tank3.show_attributes();
-
-    int min = tank1.armor_class;
-    for ( int i = 0; i < 3; i++ ) {
-        if ( armor_classes[i] <= min ) {
-            min = armor_classes[i];
-        }
+    // show all tank attributes
+    for ( int i = 0; i < TANKS; i++ ) {
+        tanks[i].show_attributes(); 
     }
 
+    // get minimum tank armor class
+    int min = tanks[1].armor_class;
+    for ( int i = 0; i < TANKS; i++ ) {
+        if ( tanks[i].armor_class <= min ) {
+            min = tanks[i].armor_class;
+        }
+    }
     cout << "lowest armor class: " << min << endl;
 
-    /* get the winning tank name - the tank with the lowest armor class */
-    for ( int i = 0; i < 3; i++ ) {
-        if ( armor_classes[i] == min ) {
+    // get the winning tank name - tank with the lowest armor class
+    for ( int i = 0; i < TANKS; i++ ) {
+        if ( tanks[i].armor_class == min ) {
             if ( i == 0 ) {
-                cout << "the winning tank is: " << tank1.weapon_name << endl;
+                cout << "the winning tank is: " << tanks[i].weapon_name << endl;
             } else if ( i == 1 ) {
-                cout << "the winning tank is: " << tank2.weapon_name << endl;
+                cout << "the winning tank is: " << tanks[i].weapon_name << endl;
             } else if ( i == 2 ) {
-                cout << "the winning tank is: " << tank3.weapon_name << endl;
+                cout << "the winning tank is: " << tanks[i].weapon_name << endl;
             }
         }
     }
