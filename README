@@ -30,3 +30,8 @@ Weapon.java      - weapon
 WeaponTest.java  - test the weapon 
 TankCombat.java  - do tank combat 
 
+C++ code:
+---------
+weapon.h        - weapon class
+weapon_test.cpp - weapon main
+
