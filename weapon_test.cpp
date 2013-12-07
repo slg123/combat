@@ -10,25 +10,25 @@ void do_plane_combat();
 
 /* default constructor */
 Weapon::Weapon() {
-    std::strcpy( weapon_name, "no name" );
-    weight = 0;
-    range = 0;
-    armor_class = 0;
+    std::strcpy( m_weapon_name, "no name" );
+    m_weight = 0;
+    m_range = 0;
+    m_armor_class = 0;
 }
 
 Weapon::Weapon( const char *nm, int wt, int rng, int ac ) {
-    std::strncpy( weapon_name, nm, 34 );
-    weapon_name[34] = '\0';
-    weight = wt;
-    range = rng;
-    armor_class = ac;
+    std::strncpy( m_weapon_name, nm, 34 );
+    m_weapon_name[34] = '\0';
+    m_weight = wt;
+    m_range = rng;
+    m_armor_class = ac;
 }
 
 Weapon::~Weapon() {
 }
 
 void Weapon::show_attributes() const {
-    cout << weapon_name << ' ' << weight << ' ' << range << ' ' << armor_class << endl;
+    cout << m_weapon_name << ' ' << m_weight << ' ' << m_range << ' ' << m_armor_class << endl;
 }
 
 int main() {
@@ -55,23 +55,23 @@ void do_tank_combat() {
     }
 
     // get minimum tank armor class
-    int min = tanks[1].armor_class;
+    int min = tanks[1].m_armor_class;
     for ( int i = 0; i < TANKS; i++ ) {
-        if ( tanks[i].armor_class <= min ) {
-            min = tanks[i].armor_class;
+        if ( tanks[i].m_armor_class <= min ) {
+            min = tanks[i].m_armor_class;
         }
     }
     cout << "lowest armor class: " << min << endl;
 
     // get the winning tank name - tank with the lowest armor class
     for ( int i = 0; i < TANKS; i++ ) {
-        if ( tanks[i].armor_class == min ) {
+        if ( tanks[i].m_armor_class == min ) {
             if ( i == 0 ) {
-                cout << "the winning tank is: " << tanks[i].weapon_name << endl;
+                cout << "the winning tank is: " << tanks[i].m_weapon_name << endl;
             } else if ( i == 1 ) {
-                cout << "the winning tank is: " << tanks[i].weapon_name << endl;
+                cout << "the winning tank is: " << tanks[i].m_weapon_name << endl;
             } else if ( i == 2 ) {
-                cout << "the winning tank is: " << tanks[i].weapon_name << endl;
+                cout << "the winning tank is: " << tanks[i].m_weapon_name << endl;
             }
         }
     }
@@ -91,22 +91,22 @@ void do_plane_combat() {
     }
 
     // get minimum plane armor class
-    int min = planes[1].armor_class;
+    int min = planes[1].m_armor_class;
     for ( int i = 0; i < PLANES; i++ ) {
-        if ( planes[i].armor_class <= min ) {
-            min = planes[i].armor_class;
+        if ( planes[i].m_armor_class <= min ) {
+            min = planes[i].m_armor_class;
         }
     }
     cout << "lowest armor class: " << min << endl;
 
     for ( int i = 0; i < PLANES; i++ ) {
-        if ( planes[i].armor_class == min ) {
+        if ( planes[i].m_armor_class == min ) {
             if ( i == 0 ) {
-                cout << "the winning plane is: " << planes[i].weapon_name << endl;
+                cout << "the winning plane is: " << planes[i].m_weapon_name << endl;
             } else if ( i == 1 ) {
-                cout << "the winning plane is: " << planes[i].weapon_name << endl;
+                cout << "the winning plane is: " << planes[i].m_weapon_name << endl;
             } else if ( i == 2 ) {
-                cout << "the winning plane is: " << planes[i].weapon_name << endl;
+                cout << "the winning plane is: " << planes[i].m_weapon_name << endl;
             }
         }
     }
