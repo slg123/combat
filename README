@@ -33,5 +33,6 @@ TankCombat.java  - do tank combat
 C++ code:
 ---------
 weapon.h        - weapon class
-weapon_test.cpp - weapon main
+weapon_test.cpp - weapon test program
+useweapon.cpp   - weapon client
 
