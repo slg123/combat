@@ -31,7 +31,7 @@ int do_tank_combat() {
     for ( int i = 1; i < TANKS; i++ ) {
         top = top.topval( tanks[i] );
     }
-    cout << "\nWinner with lowest armor class:\n";
+    cout << "\nWinner with highest armor class:\n";
     top.show();
 
     return 0;
@@ -58,7 +58,7 @@ int do_plane_combat() {
     for ( int i = 1; i < PLANES; i++ ) {
         top = top.topval( planes[i] );
     }
-    cout << "\nWinner with lowest armor class:\n";
+    cout << "\nWinner with highest armor class:\n";
     top.show();
 
     return 0;

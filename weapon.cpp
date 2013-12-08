@@ -27,7 +27,7 @@ void Weapon::show() const {
 }
 
 const Weapon &Weapon::topval( const Weapon &w ) const {
-    if ( w.m_armor_class < m_armor_class ) {
+    if ( w.m_armor_class > m_armor_class ) {
         return w;
     } else {
         return *this;
