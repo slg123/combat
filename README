@@ -1,5 +1,5 @@
 
-combat - simple OOP examples in Perl and Python, just for fun. 
+combat - simple OOP examples in C++, Perl and Python
 ------
 combat.c - simple C program that generates the same ( more or less ) output. 
 --------
@@ -32,7 +32,8 @@ TankCombat.java  - do tank combat
 
 C++ code:
 ---------
-weapon.h        - weapon class
-weapon.cpp      - weapon ( tanks, planes )
-useweapon.cpp   - weapon client
+weapon.h         - weapon class
+weapon.cpp       - weapon ( tanks, planes )
+tank_combat.cpp  - tank combat
+plane_combat.cpp - plane combat
 
