@@ -10,8 +10,7 @@ combat.pl - driver that calls perl scripts to do aircraft or tank combat. Run th
 
 perl modules and main code:
 ---------------------------
-Aircraft.pm - aircraft combat perl module
-Tank.pm - tank combat perl module
+Weapon.pm - weapon class
 aircraft_combat.pl - aircraft_combat perl script
 tank_combat.pl - aircraft_combat perl script
 
