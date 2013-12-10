@@ -4,6 +4,9 @@ combat - simple OOP examples in C++, Perl and Python
 combat.c - simple C program that generates the same ( more or less ) output. 
 --------
 
+combat.rb - simple ruby OOP program that does the same thing.
+---------
+
 perl driver code:
 -----------------
 combat.pl - driver that calls perl scripts to do aircraft or tank combat. Run this. 

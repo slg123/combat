@@ -4,9 +4,9 @@ use Weapon;
 
 package main;
 
-my $aircraft1 = Weapon->new( type => "Mitsubishi A6M Zero", weight => 5200, armor_class =>  10 );
-my $aircraft2 = Weapon->new( type => "Focke-Wulfe 190", weight => 8000, armor_class => 13 );
-my $aircraft3 = Weapon->new( type => "Grumman F6F Hellcat", weight => 10000, armor_class => 4 );
+my $aircraft1 = Weapon->new( type => "Mitsubishi A6M Zero", weight =>  5200, armor_class => 10 );
+my $aircraft2 = Weapon->new( type => "Focke-Wulfe 190",     weight =>  8000, armor_class => 13 );
+my $aircraft3 = Weapon->new( type => "Grumman F6F Hellcat", weight => 10000, armor_class =>  4 );
 
 sub get_lowest_armor_class {
     my @armor_classes; 
