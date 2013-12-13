@@ -1,7 +1,6 @@
 
 class Weapon
     attr_accessor :type, :weight, :range, :armor_class
-
     def Weapon.set_attributes( tp="null", wt=0, rg=0, ac=0 )
         w = Weapon.new
         w.type        = tp
