@@ -1,4 +1,4 @@
-function Weapon (type) {
+function Weapon ( type ) {
     this.type        = type;
     this.weight      = 0;
     this.range       = 0;
