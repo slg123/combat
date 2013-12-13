@@ -24,10 +24,6 @@ tank3.weight      = 14000;
 tank3.range       = 120;
 tank3.armor_class = 7;
 
-var out1 = tank1.getWeaponInfo();
-var out2 = tank2.getWeaponInfo();
-var out3 = tank3.getWeaponInfo(); 
-
 function getLowestArmorClass() {
     var tank_array = [ tank1.armor_class, tank2.armor_class, tank3.armor_class ];
     tank_array.sort( function( a, b ) {
@@ -49,12 +45,8 @@ function getWinningTank() {
 }
 
 document.writeln(); 
-document.write( out1 ); 
-document.writeln(); 
-document.write( out2 ); 
-document.writeln(); 
-document.write( out3 ); 
-document.writeln(); 
-document.write( 'the winning armor class is: ' + getLowestArmorClass() ); 
-document.writeln();
-document.write( 'the winning tank is: ' + getWinningTank() ); 
+document.writeln( tank1.getWeaponInfo() ); 
+document.writeln( tank2.getWeaponInfo() );
+document.writeln( tank3.getWeaponInfo() ); 
+document.writeln( 'the winning armor class is: ' + getLowestArmorClass() ); 
+document.writeln( 'the winning tank is: ' + getWinningTank() ); 
