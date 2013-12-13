@@ -37,16 +37,16 @@ function getLowestArmorClass() {
     return lowest;
 }
 
-//var lowest_armor_class = getLowestArmorClass();
-//function findTankWithLowestArmorClass() {
-//    let tank_array = [ tank1, tank2, tank3 ];
-//    for ( let i of tank_array ) {
-//        document.write( "DEBUG: " + i.armor_class ); 
-//        if ( i.armor_class == lowest_armor_class ) {
-//            return i.type;
-//        }
-//    }
-//}
+function getWinningTank() {
+    var lowest = getLowestArmorClass();
+    if ( lowest == tank1.armor_class ) {
+        return tank1.type;
+    } else if ( lowest == tank2.armor_class ) {
+        return tank2.type;
+    } else if ( lowest == tank3.armor_class ) {
+        return tank3.type;
+    }
+}
 
 document.writeln(); 
 document.write( out1 ); 
@@ -57,5 +57,4 @@ document.write( out3 );
 document.writeln(); 
 document.write( 'the winning armor class is: ' + getLowestArmorClass() ); 
 document.writeln();
-var winning_tank = findTankWithLowestArmorClass(); 
-document.write( 'the winning tank is: ' + winning_tank ); 
+document.write( 'the winning tank is: ' + getWinningTank() ); 
