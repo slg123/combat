@@ -60,10 +60,22 @@ sub get_solaris_cpu_counters {
 sub get_solaris_vmm_counters {
 }
 
-for ( my $i = 0; $i < 100; $i++ ) {
-    if ( $os =~ "Linux" ) {
-        get_linux_vmm_counters();
-        get_linux_cpu_counters();
+sub main {
+    for ( my $i = 0; $i < 100; $i++ ) {
+        if ( $os =~ "Linux" ) {
+            get_linux_vmm_counters();
+            get_linux_cpu_counters();
+        }
+        if ( $os =~ "AIX" ) {
+            get_aix_vmm_counters();
+            get_aix_cpu_counters();
+        }
+        if ( $os =~ "Solaris" ) {
+            get_solaris_cpu_counters();
+            get_solaris_vmm_counters();
+        }
+        sleep( 10 );
     }
-    sleep( 10 );
 }
+
+main();
