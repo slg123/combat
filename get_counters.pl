@@ -35,14 +35,18 @@ sub get_linux_vmm_counters {
 
 sub get_linux_cpu_counters {
     my $file = "/proc/stat";
+    my $out  = "/root/perl/linux_counters.csv";
     open my $fh, "<", $file;
+    open my $ofh, ">>", $out;
     while ( <$fh> ) {
         if ( /cpu/ ) {
             my ( $cpu, $f1, $f2, $f3, $f4, $f5, $f6, $f7, $f8, $f9 ) = split ' ', $_;
             print "$date,$cpu,$f1,$f2,$f3\n";   # example for now
+            print $ofh "$date,$cpu,$f1,$f2,$f3\n";
         }
     }
     close $fh;
+    close $ofh;
 }
 
 sub get_aix_vmm_counters {
