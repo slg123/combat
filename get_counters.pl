@@ -6,6 +6,7 @@ use autodie;
 
 my $os = `uname`;
 chomp( our $date = `date '+%Y-%m-%d %H:%M:%S'` );  
+our $out = "/root/perl/linux_counters.csv";
 
 sub get_linux_vmm_counters {
     my $file = "/proc/meminfo";
@@ -19,7 +20,6 @@ sub get_linux_vmm_counters {
     }
     close $fh;
 
-    my $out = "/root/perl/linux_counters.csv";
     open my $ofh, ">>", $out;
     my @wanted_values = qw( MemTotal: MemFree: Buffers: SwapFree: Shmem: Slab: ); 
     while ( my ( $name, $value ) = each %counter_values ) {
@@ -35,7 +35,6 @@ sub get_linux_vmm_counters {
 
 sub get_linux_cpu_counters {
     my $file = "/proc/stat";
-    my $out  = "/root/perl/linux_counters.csv";
     open my $fh, "<", $file;
     open my $ofh, ">>", $out;
     while ( <$fh> ) {
