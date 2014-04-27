@@ -21,3 +21,5 @@ while ( <$fh> ) {
         }
     }
 }
+close $fh;
+close $ofh;
