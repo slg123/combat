@@ -5,7 +5,7 @@
 #define HEXAGRAMS 64
 
 int get_random_hexagram();
-char *fetch_iching_text( int );
+const char *fetch_iching_text( int );
 
 int iching_hexagram[ HEXAGRAMS ]; 
 
@@ -16,7 +16,7 @@ int main( int argc, char *argv[] ) {
     } else {
         hexagram = get_random_hexagram();
     }
-    char *hexagram_text = fetch_iching_text( hexagram ); 
+    const char *hexagram_text = fetch_iching_text( hexagram ); 
     if ( hexagram > 0 && hexagram < 65 ) {
         printf("%d %s\n", hexagram, hexagram_text);
     } else {
@@ -31,8 +31,8 @@ int get_random_hexagram() {
     return hexagram;
 }
 
-char *fetch_iching_text( int hexagram ) {
-    char *iching_text;
+const char *fetch_iching_text( int hexagram ) {
+    const char *iching_text;
     switch( hexagram ) {
         case 1:
             iching_text = "Force (qian) - The Creative";
