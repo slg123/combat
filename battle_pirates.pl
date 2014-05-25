@@ -253,5 +253,9 @@ for my $hull ( @hulls ) {
 }
 print "\n\n"; 
 printf "hammerhead armor points: %s\n",  $hull_type{ 'hammerhead' }{ 'armor_points' };
+printf "hammerhead weapon slots: %s\n",  $hull_type{ 'hammerhead' }{ 'weapon_slots' };
 printf "arbiter armor points: %s\n", $hull_type{ 'arbiter' }{ 'armor_points' };
+printf "arbiter weapon slots: %s\n", $hull_type{ 'arbiter' }{ 'weapon_slots' };
 printf "battle barge armor points: %s\n", $hull_type{ 'battle barge' }{ 'armor_points' };
+printf "battle barge weapon slots: %s\n", $hull_type{ 'battle barge' }{ 'weapon_slots' };
+
