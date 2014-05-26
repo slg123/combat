@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
-# noodling with battle pirates hull stats
+# noodling with battle pirates stats
+# warning - this is a highly addictive game. 
 
 use strict;
 use warnings;
@@ -300,4 +301,18 @@ sub print_some_stats {
 }
 
 print_some_stats(); 
+
+sub lookup_hull_stats {
+    my $hull = shift;
+    print "\n\nstats for $hull: \n\n"; 
+    for my $attr ( @attributes ) {
+        if ( defined $hull_type{ $hull }{ $attr } ) {
+            printf "%-20s: %-20s\n", $attr, $hull_type{ $hull }{ $attr }, if defined $attr; 
+        }
+    }
+}
+
+lookup_hull_stats( 'hammerhead' ); 
+
+
 
