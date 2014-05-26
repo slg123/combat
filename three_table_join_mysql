@@ -1,0 +1,62 @@
+mysql> show tables;
++--------------------+
+| Tables_in_football |
++--------------------+
+| nfl_stats          |
+| running_backs      |
+| teams              |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from nfl_stats;
++----------------------+---------------+--------------------+
+| name                 | rushing_yards | rushing_touchdowns |
++----------------------+---------------+--------------------+
+| BenJarvus Green-Elli |          3158 |                 35 |
+| Ryan Mathews         |          2476 |                 14 |
+| Darren McFadden      |          3334 |                 18 |
+| Ray Rice             |          5520 |                 33 |
+| Arian Foster         |          4521 |                 50 |
++----------------------+---------------+--------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from running_backs;
++----------------------+--------+------------+
+| name                 | weight | team       |
++----------------------+--------+------------+
+| Arian Foster         |    228 | Texans     |
+| Ray Rice             |    212 | Ravens     |
+| Darren McFadden      |    218 | Raiders    |
+| Ryan Mathews         |    220 | Chargers   |
+| BenJarvus Green-Elli |    215 | Cincinnati |
++----------------------+--------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from teams;
++------+----------+------------+
+| id   | name     | city       |
++------+----------+------------+
+|    1 | Texans   | Houston    |
+|    2 | Ravens   | Baltimore  |
+|    3 | Raiders  | Oakland    |
+|    4 | Chargers | San Diego  |
+|    5 | Steelers | Pittsburgh |
+|    6 | Bengals  | Cincinnati |
+|    7 | Rams     | St. Louis  |
++------+----------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select team, rushing_yards from teams t join running_backs r on t.name=r.team
+    -> join nfl_stats s on r.name=s.name;
+    +----------+---------------+
+    | team     | rushing_yards |
+    +----------+---------------+
+    | Texans   |          4521 |
+    | Ravens   |          5520 |
+    | Raiders  |          3334 |
+    | Chargers |          2476 |
+    +----------+---------------+
+    4 rows in set (0.00 sec)
+
+    mysql> 
+
