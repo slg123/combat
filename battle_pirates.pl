@@ -5,6 +5,35 @@
 use strict;
 use warnings;
 
+my %weapon_type = (
+    'ripper cannon III' =>
+        {
+            tech              => 'forsaken',
+            range             => 38,
+            damage            => 130,
+            'building damage' => 227, 
+            salvo             => 3,
+            'reload time'     => 1.50,
+            accuracy          => 70,
+            'weapon type'     => 'cannon',
+            'damage type'     => 'ballistic',
+            weight            => '104 tons',
+        },
+    'ripper cannon IV' =>
+        {
+            tech              => 'forsaken',
+            range             => 38,
+            damage            => 234,
+            'building damage' => 409, 
+            salvo             => 3,
+            'reload time'     => 1.50,
+            accuracy          => 60,
+            'weapon type'     => 'cannon',
+            'damage type'     => 'ballistic',
+            weight            => '249 tons',
+        },
+);
+
 my %hull_type = ( 
     'gunboat' =>
         {
@@ -243,19 +272,32 @@ while ( my ( $key, $value ) = each %hull_type ) {
     push @hulls, $key; 
 }
 
-for my $hull ( @hulls ) {
-    print "\n\n*** $hull *** \n\n";
-    for my $attr ( @attributes ) {
-        if ( defined $hull_type{ $hull }{ $attr } ) {
-            printf "%-20s: %-20s\n", $attr, $hull_type{ $hull }{ $attr }, if defined $attr; 
+sub show_all_hull_stats {
+    for my $hull ( @hulls ) {
+        print "\n\n*** $hull *** \n\n";
+        for my $attr ( @attributes ) {
+            if ( defined $hull_type{ $hull }{ $attr } ) {
+                printf "%-20s: %-20s\n", $attr, $hull_type{ $hull }{ $attr }, if defined $attr; 
+            }
         }
     }
 }
-print "\n\n"; 
-printf "hammerhead armor points: %s\n",  $hull_type{ 'hammerhead' }{ 'armor_points' };
-printf "hammerhead weapon slots: %s\n",  $hull_type{ 'hammerhead' }{ 'weapon_slots' };
-printf "arbiter armor points: %s\n", $hull_type{ 'arbiter' }{ 'armor_points' };
-printf "arbiter weapon slots: %s\n", $hull_type{ 'arbiter' }{ 'weapon_slots' };
-printf "battle barge armor points: %s\n", $hull_type{ 'battle barge' }{ 'armor_points' };
-printf "battle barge weapon slots: %s\n", $hull_type{ 'battle barge' }{ 'weapon_slots' };
+show_all_hull_stats(); 
+
+sub print_some_stats {
+    print "\n\n"; 
+    printf "hammerhead armor points: %s\n",  $hull_type{ 'hammerhead' }{ 'armor_points' };
+    printf "hammerhead weapon slots: %s\n",  $hull_type{ 'hammerhead' }{ 'weapon_slots' };
+    printf "arbiter armor points: %s\n", $hull_type{ 'arbiter' }{ 'armor_points' };
+    printf "arbiter weapon slots: %s\n", $hull_type{ 'arbiter' }{ 'weapon_slots' };
+    printf "battle barge armor points: %s\n", $hull_type{ 'battle barge' }{ 'armor_points' };
+    printf "battle barge weapon slots: %s\n", $hull_type{ 'battle barge' }{ 'weapon_slots' };
+
+    printf "ripper cannon III damage: %s\n", $weapon_type{ 'ripper cannon III' }{ 'damage' };
+    printf "ripper cannon III building damage: %s\n", $weapon_type{ 'ripper cannon III' }{ 'building damage' };
+    printf "ripper cannon IV damage: %s\n", $weapon_type{ 'ripper cannon IV' }{ 'damage' };
+    printf "ripper cannon IV building damage: %s\n", $weapon_type{ 'ripper cannon IV' }{ 'building damage' };
+}
+
+print_some_stats(); 
 
