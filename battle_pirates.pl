@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 
 # noodling with battle pirates stats
-# warning - this is a highly addictive game. 
 
 use strict;
 use warnings;
@@ -314,5 +313,6 @@ sub lookup_hull_stats {
 
 lookup_hull_stats( 'hammerhead' ); 
 
-
+$hull_type{ 'hammerhead' }{ 'cargo' } =~ s/\D//g;
+print "cargo: ".$hull_type{ 'hammerhead' }{ 'cargo' }, "\n"; 
 
