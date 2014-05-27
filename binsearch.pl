@@ -42,6 +42,9 @@ sub print_them {
     printf "%30s index\n", "word"; 
     printf "%30s -----\n", "----"; 
     while ( my ( $k, $v ) = each %$hash_ref ) {
+        #
+        # if there's a value, print it, otherwise just print the key with no index. 
+        #
         if ( $v ) {
             printf "%30s %d\n", $k, $v;
         } else {
