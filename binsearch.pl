@@ -33,7 +33,7 @@ my @words = qw( zajfzajf metamorphosis googlymoogly zucktruck prudent annotate f
 foreach my $i ( @words ) {
     my $index = binary_search( \@lines, $i );
     if ( $index ) {
-        $word_index{ $i } = $index;    # add to hash if index exists
+        $word_index{ $i } = $index;   
     } else {
         $nonword_index{ $i } = $index;
     }
