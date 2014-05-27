@@ -41,18 +41,19 @@ foreach my $i ( @words ) {
 
 sub print_them {
     my $hash_ref = shift;
-    printf "%30s index\n", "word"; 
-    printf "%30s -----\n", "----"; 
+    printf "word                           index  \n"; 
+    print "---------                    ----------\n"; 
     while ( my ( $k, $v ) = each %$hash_ref ) {
         #
         # if there's a value, print it, otherwise just print the key with no index. 
         #
         if ( $v ) {
-            printf "%30s %d\n", $k, $v;
+            printf "%-30s %d\n", $k, $v;
         } else {
-            printf "%30s - no index.\n", $k;
+            printf "%-30s - no index.\n", $k;
         }
     }
+    print "\n"x2; 
 }
 
 print_them( \%word_index );
