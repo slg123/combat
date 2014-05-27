@@ -26,16 +26,30 @@ while ( <$fh> ) {
 }
 
 my %word_index = ();
-my @words = qw( metamorphosis googlymoogly prudent annotate facebook zebra plutocrat bloodaxe ); 
+my %nonword_index = (); 
+my @words = qw( zajfzajf metamorphosis googlymoogly zucktruck prudent annotate facebook zebra plutocrat bloodaxe ); 
 foreach my $i ( @words ) {
     my $index = binary_search( \@lines, $i );
     if ( $index ) {
         $word_index{ $i } = $index;    # add to hash if index exists
-    } 
+    } else {
+        $nonword_index{ $i } = $index;
+    }
 }
 
-printf "%30s index\n", "word"; 
-printf "%30s -----\n", "----"; 
-while ( my ( $k, $v ) = each %word_index ) {
-    printf "%30s %d\n", $k, $v;
+sub print_them {
+    my $hash_ref = shift;
+    printf "%30s index\n", "word"; 
+    printf "%30s -----\n", "----"; 
+    while ( my ( $k, $v ) = each %$hash_ref ) {
+        if ( $v ) {
+            printf "%30s %d\n", $k, $v;
+        } else {
+            printf "%30s - no index.\n", $k;
+        }
+    }
 }
+
+print_them( \%word_index );
+print_them( \%nonword_index );
+
