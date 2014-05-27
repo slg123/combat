@@ -27,7 +27,9 @@ while ( <$fh> ) {
 
 my %word_index = ();
 my %nonword_index = (); 
+
 my @words = qw( zajfzajf metamorphosis googlymoogly zucktruck prudent annotate facebook zebra plutocrat bloodaxe ); 
+
 foreach my $i ( @words ) {
     my $index = binary_search( \@lines, $i );
     if ( $index ) {
