@@ -30,7 +30,7 @@ def get_last_dates( date_count ):
             count += 1
             if count == date_count:
                 column = line.split(' ')
-                date = column[2] + " " + column[3]
+                date = column[2] + " " + column[3] + " " + column[4]
                 return date
 
 ip_counts = set()
