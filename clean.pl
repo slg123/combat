@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use autodie;
+use Socket;
 
 my %seen_ips;
 
@@ -15,13 +16,9 @@ open my $fh, "<", $file;
 while ( <$fh> ) {
     next if /IP Addr/; 
     my ( $ip, $dash1, $count, $dash2, $dash3, $date ) = split " "; 
-    my $nslookup = "nslookup $ip | grep name | awk '{ print \$4 }'";
-    my $host = `$nslookup`; 
-    chomp $host;
-    $host =~ s/(=||\R)//g;
-    $host = substr $host, 0, -1;
-
-    if ( $count && $date && $host ) {
+    my $inet_ip = inet_aton( $ip ); 
+    my $host = gethostbyaddr( $inet_ip, AF_INET ); 
+    if ( $count && $date && $host ) {    
         $seen_ips{ $ip }++ || printf( "%-17s -- %-8d -- %s] -- %s\n", $ip, $count, $date, $host ); 
     }
 }
