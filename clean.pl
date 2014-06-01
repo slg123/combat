@@ -18,11 +18,11 @@ while ( <$fh> ) {
     my $nslookup = "nslookup $ip | grep name | awk '{ print \$4 }'";
     my $host = `$nslookup`; 
     chomp $host;
-    $host =~ s/(=||\R)//g;               
+    $host =~ s/(=||\R)//g;
     $host = substr $host, 0, -1;
 
     if ( $count && $date && $host ) {
-        $seen_ips{ $ip }++ || printf( "%-17s -- %-8d -- %s] hostname: %s\n", $ip, $count, $date, $host ); 
+        $seen_ips{ $ip }++ || printf( "%-17s -- %-8d -- %s] -- %s\n", $ip, $count, $date, $host ); 
     }
 }
 
