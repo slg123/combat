@@ -43,8 +43,6 @@ sub from_algebraic {
     return ( $x, $y ); 
 }
 
-
-
 sub draw_board {
     my ( $x, $y ) = place_knight( "e4" ); 
     print "DEBUG: ".$x." ".$y."\n"; 
