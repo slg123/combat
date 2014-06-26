@@ -14,7 +14,6 @@ sub show_possible_moves {
             [  2,  1 ],
             [  2, -1 ],
     );    
-
     my $count = 0; 
     for ( @knight_moves ) {
         print "$knight_moves[$count][0] \t $knight_moves[$count][1]  \n";
@@ -44,8 +43,6 @@ sub from_algebraic {
 }
 
 sub draw_board {
-    my ( $x, $y ) = place_knight( "e4" ); 
-    print "DEBUG: ".$x." ".$y."\n"; 
     for ( my $i = 1; $i < 9; $i++ ) { 
         for ( my $j = 1; $j <= 9; $j++ ) {
             if ( $j == 9 ) {
@@ -57,3 +54,5 @@ sub draw_board {
     }
 }
 draw_board();
+my ( $x, $y ) = place_knight( "e4" ); 
+print "DEBUG: ".$x." ".$y."\n"; 
