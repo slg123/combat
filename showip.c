@@ -44,7 +44,13 @@ int main( int argc, char *argv[] )
             ipver = "IPv4"; 
         } else { // IPv6
             struct sockaddr_in6 *ipv6 = ( struct sockaddr_in6 *)p->ai_addr;
+            struct addrinfo *ipv6_addrinfo = ( struct addrinfo *)p->ai_next;
             addr = &(ipv6->sin6_addr); 
+            fl    = &(ipv6_addrinfo->ai_flags);
+            fam   = &(ipv6_addrinfo->ai_family);
+            typ   = &(ipv6_addrinfo->ai_socktype);
+            proto = &(ipv6_addrinfo->ai_protocol); 
+            ipver = "IPv6"; 
         }
 
         inet_ntop( p->ai_family, addr, ipstr, sizeof ipstr ); 
