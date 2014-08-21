@@ -12,7 +12,6 @@ use warnings;
 my @even_fibs = (); 
 
 sub fibs {
-
     my $upto    = shift;
     my $curnum  = 1; 
     my $prevnum = 1;
@@ -26,7 +25,6 @@ sub fibs {
             push @even_fibs, $sum; 
         }
     }
-
 }
 
 fibs( 4000000 ); 
