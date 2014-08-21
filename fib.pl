@@ -13,7 +13,6 @@ my @even_fibs = ();
 
 sub fibs {
 
-    my $start   = shift;
     my $upto    = shift;
     my $curnum  = 1; 
     my $prevnum = 1;
@@ -30,7 +29,7 @@ sub fibs {
 
 }
 
-fibs( 1, 4000000 ); 
+fibs( 4000000 ); 
 
 our $total = 0; 
 for ( @even_fibs ) {
