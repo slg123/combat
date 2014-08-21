@@ -33,7 +33,6 @@ fibs( 4000000 );
 
 our $total = 0; 
 for ( @even_fibs ) {
-    #print " $_ "; 
     $total += $_; 
 }
 print "total: $total\n";
