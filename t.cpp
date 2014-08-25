@@ -35,9 +35,7 @@ int main() {
     cout << "Enter a foo: ";
     cin >> p->foo;
     if ( strlen(p->foo) > 10 ) {
-        int l = strlen( p->foo ); 
-        cout << "l is greater than 10 chars." << endl;
-        cout << " no bueno. " << endl;
+        cout << p->foo << "greater than 10 chars." << endl;
         exit( EXIT_FAILURE );
     }
     cout << p->id << endl; 
