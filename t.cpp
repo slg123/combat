@@ -31,8 +31,16 @@ class IntergalacticBattleship {
         cout << name << endl; 
         cout << "We are tearing ass all over the galaxy!" << endl;
     }
+    IntergalacticBattleship(); 
+    ~IntergalacticBattleship(); // dtor
 };
     
+IntergalacticBattleship::~IntergalacticBattleship() {
+    IntergalacticBattleship *igb1, *igb2, *igb3;
+    delete igb1;
+    delete igb2;
+    delete igb3;
+}
 
 int main() {
 
