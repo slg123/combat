@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include <stdlib.h>
-#include <unistd.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -9,7 +8,7 @@ using namespace std;
 #define FOO_SIZE 10
 
 class Person {
-    public:
+  public:
     int id;
     char name[NAME_SIZE]; 
     char foo[FOO_SIZE];
@@ -19,16 +18,38 @@ class Person {
 };
 
 class Student : public Person {
-    public:
+  public:
     void aboutMe() {
         cout << "I am a student." << endl;
     }
 };
 
+class IntergalacticBattleship {
+  public:
+    char name[NAME_SIZE]; 
+    void fartThruTheGalaxy( char name[] ) {
+        cout << name << endl; 
+        cout << "We are tearing ass all over the galaxy!" << endl;
+    }
+};
+    
+
 int main() {
 
+    IntergalacticBattleship *igb1, *igb2, *igb3;
+
+    char name[NAME_SIZE] = "Ignignot"; 
+    char oname[NAME_SIZE] = "Urr"; 
+
+    igb1->fartThruTheGalaxy( name ); 
+    igb1->fartThruTheGalaxy( oname ); 
+    igb2->fartThruTheGalaxy( name ); 
+    igb2->fartThruTheGalaxy( oname ); 
+    igb3->fartThruTheGalaxy( name ); 
+    igb3->fartThruTheGalaxy( oname ); 
+
     Student *p = new Student();
-    p->id = 666; 
+    p->id = 92; 
 
     cout << "Enter a name: "; 
     cin >> p->name; 
