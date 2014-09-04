@@ -27,4 +27,3 @@ for ( my $i = 0, my $j = 13; $i <= $length && $j <= $length; $i++, $j++ ) {
 my @sorted = sort { $a <=> $b } @nums; 
 my $largest = pop( @sorted ); 
 print $largest, "\n"; 
-
