@@ -20,11 +20,9 @@ sub get_product {
 
 my @nums = (); 
 my $length = @str;
-my $count = 0;
 for ( my $i = 0, my $j = 13; $i <= $length && $j <= $length; $i++, $j++ ) {
     my $prod = get_product( $i, $j ); 
     push @nums, $prod;
-    $count++;
 }
 
 my @sorted = sort { $a <=> $b } @nums; 
