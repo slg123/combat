@@ -5,16 +5,16 @@ for ( var i = 2; i <= N; i++ ) {
 }
 
 a[1] = 0;
-for ( var j = 2; j <= N/2; j++ ) {
-    for ( var k = 2; k <= N/j; k++ ) {
-        a[j*k] = 0;
+for ( var i = 2; i <= N/2; i++ ) {
+    for ( var j = 2; j <= N/i; j++ ) {
+        a[i*j] = 0;
     }
 }
 
 var sum = 0;
-for ( var n = 1; n <= 2000000; n++ ) {
-    if ( a[n] ) {
-        sum += n;
+for ( var i = 1; i <= 2000000; i++ ) {
+    if ( a[i] ) {
+        sum += i;
     }
 }
 document.write( sum ); 
