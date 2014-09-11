@@ -74,15 +74,10 @@ int main(void)
     int generations = 0;
 
     while (generations < nsecPerDay) {    // number of seconds in 24 hours. this won't hold your interest that long.
-
         WriteMap(map);
-
         for (row = 1; row <= MAXROW; row++) 
-
             for (col = 1; col <= MAXCOL; col++) 
- 
                 switch(NeighborCount(map, row, col)) {
-
                 case 0:
                 case 1:
                     newmap[row][col] = DEAD;
