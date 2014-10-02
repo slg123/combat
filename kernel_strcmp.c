@@ -33,9 +33,9 @@ int strcmp(const char *str1, const char *str2)
 
 void compare_them(const char *s1, const char *s2)
 {
-    if (strcmp(s1, s2) == 0)
-        printf("%s == %s\n", s1, s2); 
-    else
+    if (strcmp(s1, s2))
         printf("%s != %s\n", s1, s2);
+    else
+        printf("%s == %s\n", s1, s2); 
 }
 
