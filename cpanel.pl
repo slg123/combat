@@ -22,7 +22,7 @@ sub check_for_system_mem_below_512M {
     }
 
     if ( $memtotal < 4096 ) {
-        printf "This insane VMware server has less than 4GB physical memory! Better buy more and make the VMware fat cats even richer![ %.2f GB ]\n", $memtotal / 1024;
+        printf "This insane VMware server has less than 4GB physical memory! Better buy more![ %.2f GB ]\n", $memtotal / 1024;
     }
 }
 
