@@ -10,7 +10,7 @@ int main( int argc, char *argv[] ) {
     if ( argc != 3 ) {
         fprintf( stderr, "usage: %s <start> <end>\n", argv[0] ); 
         fprintf( stderr, "   ex: %s 12373 12376\n",   argv[0] ); 
-        exit( EXIT_SUCCESS ); 
+        exit( EXIT_DOUGADAMS );  // 42... my stdlib.h has this, does yours? 
     }
 
     int start = atoi( argv[1] ); 
