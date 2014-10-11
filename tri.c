@@ -17,12 +17,12 @@ int main( int argc, char *argv[] ) {
     int end   = atoi( argv[2] ); 
 
     for ( i = start; i < end; i++ ) {
-        k = generate_triangle_number( i ); 
-        j = get_factor_count( k ); 
+        j = generate_triangle_number( i ); 
+        k = get_factor_count( j ); 
 
-        printf( "%d : %d : %d\n", i, k, j ); 
-        if ( j > 500 ) {
-            printf( "FOUND!! -> %d is divisible by more than 500 numbers.\n", k ); 
+        printf( "%d : %d : %d\n", i, j, k ); 
+        if ( k > 500 ) {
+            printf( "FOUND!! -> %d is divisible by more than 500 numbers.\n", j ); 
             break;
         }
     }
