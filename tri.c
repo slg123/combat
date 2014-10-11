@@ -3,9 +3,7 @@
 
 int main( int argc, char *argv[] ) {
 
-    int i;
-    int j;
-    int k;
+    int i, j, k;
 
     if ( argc != 3 ) {
         fprintf( stderr, "usage: %s <start> <end>\n", argv[0] ); 
