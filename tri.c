@@ -1,21 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
+int main( int argc, char *argv[] ) {
 
     int i;
     int j;
     int k;
     int triangle_num;
 
-    for ( i = 0; i < 20000; i++ ) {
-    //for ( i = 4471; i < 20000; i++ ) {
+    if ( argc != 3 ) {
+        fprintf( stderr, "usage: %s <start> <end>\n", argv[0] ); 
+        fprintf( stderr, "   ex: %s 12373 12376\n",   argv[0] ); 
+        exit( EXIT_FAILURE ); 
+    }
+
+    int start = atoi( argv[1] ); 
+    int end   = atoi( argv[2] ); 
+
+    for ( i = start; i < end; i++ ) {
         k = generate_triangle_number( i ); 
         j = get_factor_count( k ); 
 
         printf( "%d : %d : %d\n", i, k, j ); 
         if ( j > 500 ) {
-            printf( "FOUND!! "); 
-            printf( "%d is divisible by > 500 numbers.\n", k ); 
+            printf( "FOUND!! -> %d is divisible by more than 500 numbers.\n", k ); 
             break;
         }
     }
