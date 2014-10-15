@@ -23,9 +23,7 @@ int get_factor_count( int n ) {
     return count;
 }
 
-// find a triangle number with more than 500 divisors...
 int main( int argc, char *argv[] ) {
-
     int i, j, k, thread_id, nloops;
 #pragma omp parallel private( thread_id, nloops )
     {    
