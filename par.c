@@ -38,9 +38,8 @@ int main() {
         k = get_factor_count( j ); 
         if ( k > 500 ) {
             min = j; 
-            printf( "%d\n", j ); 
-            if ( min < j ) {
-                min = j; 
+            if ( j < min ) {
+                j = min; 
             }
         }
     }
