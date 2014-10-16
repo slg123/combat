@@ -37,7 +37,6 @@ int main() {
         j = generate_triangle_number( i );
         k = get_factor_count( j ); 
         if ( k > 500 ) {
-            min = j; 
             if ( j < min ) {
                 j = min; 
             }
