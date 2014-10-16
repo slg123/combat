@@ -29,8 +29,8 @@ int main() {
     int i, j, k, min;
 
     #pragma omp parallel for private(j)
-    //for ( i = 0; i < 15000; ++i ) {
-    for ( i = 12000; i < 13000; ++i ) {
+    for ( i = 0; i < 15000; ++i ) {
+    //for ( i = 12000; i < 13000; ++i ) {
         if ( i % 1000 == 0 ) {
             printf( "n -> %d\n", i ); 
         }
