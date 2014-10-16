@@ -27,6 +27,7 @@ int get_factor_count( int n ) {
 
 int main() {
     int i, j, k, min;
+    min = 99999999; 
 
     #pragma omp parallel for private(j)
     for ( i = 0; i < 15000; ++i ) {
@@ -37,8 +38,9 @@ int main() {
         j = generate_triangle_number( i );
         k = get_factor_count( j ); 
         if ( k > 500 ) {
+            printf( "%d has more than 500 divisors.\n", j ); 
             if ( j < min ) {
-                min = j;
+                min = j; 
             }
         }
     }
