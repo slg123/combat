@@ -25,8 +25,8 @@ int get_factor_count( int n ) {
 
 int main() {
     int i, j, k, lowest, curr_low;
-    #pragma omp parallel for private(j)
 
+    #pragma omp parallel for private(j)
     for ( i = 0; i < 15000; i++ ) {
         if ( i % 1000 == 0 ) {
             printf( "n -> %d\n", i ); 
