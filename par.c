@@ -23,26 +23,24 @@ int get_factor_count( int n ) {
     return count;
 }
 
-int main( int argc, char *argv[] ) {
-    int i, j, k, thread_id, nloops;
-#pragma omp parallel private( thread_id, nloops )
-    {    
-        nloops = 0;
-#pragma omp for
-        for ( i = 1; i < 15000; i++ ) {
-            if ( i % 1000 == 0 ) {
-                printf( "current n -> %d\n", i ); 
+int main() {
+    int i, j, k, lowest, curr_low;
+    #pragma omp parallel for private(j)
+
+    for ( i = 0; i < 15000; i++ ) {
+        if ( i % 1000 == 0 ) {
+            printf( "n -> %d\n", i ); 
+        }
+        j = generate_triangle_number( i );
+        k = get_factor_count( j ); 
+        if ( k > 500 ) {
+            curr_low = j;
+            lowest = curr_low; 
+            if ( curr_low < lowest ) {
+                lowest = curr_low;
             }
-            //++nloops;
-            j = generate_triangle_number( i );
-            k = get_factor_count( j ); 
-            if ( k > 500 ) {
-                printf( "FOUND!! %d is divisible by more than 500 numbers.\n", j ); 
-                exit(1); 
-            }
-            thread_id = omp_get_thread_num(); 
-            //printf( "Thread %d performed %d iterations of the loop.\n", thread_id, nloops ); 
         }
     }
+    printf( "%d\n", lowest ); 
     return 0;
 }
