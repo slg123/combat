@@ -38,7 +38,7 @@ int main() {
         k = get_factor_count( j ); 
         if ( k > 500 ) {
             if ( j < min ) {
-                j = min; 
+                min = j;
             }
         }
     }
